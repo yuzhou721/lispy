@@ -69,7 +69,7 @@
 
 (defun lispy--clojure-process-buffer ()
   (if (or org-src-mode (eq major-mode 'org-mode))
-      (cadr (first (sesman--all-system-sessions 'CIDER)))
+      (cadr (cl-first (sesman--all-system-sessions 'CIDER)))
     (let ((cur-type (cider-repl-type-for-buffer)))
       (car (cider-repls cur-type nil)))))
 
